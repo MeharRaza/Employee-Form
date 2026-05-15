@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <select id="countrySelect">
+    <option value="">-- Select Country --</option>
+    <option value="us" selected>United States</option>
+    <option value="ca">Canada</option>
+    <option value="uk">United Kingdom</option>
+    <option value="au">Australia</option>
+    <option value="in">India</option>
+  </select>
+  
+  <select id="multiSelect" multiple size="4">
+    <option value="js">JavaScript</option>
+    <option value="py">Python</option>
+    <option value="java">Java</option>
+    <option value="cpp">C++</option>
+    <option value="rb">Ruby</option>
+  </select>
+  
+  <div>
+    <button onclick="getSelected()">Get Selected</button>
+    <button onclick="addOption()">Add Option</button>
+    <button onclick="removeOption()">Remove Option</button>
+  </div>
+  
+  <script>
+    const countrySelect = document.getElementById('countrySelect');
+    const multiSelect = document.getElementById('multiSelect');
+    
+    // Get selected value (single select)
+    console.log('Selected value:', countrySelect.value); // "us"
+    console.log('Selected index:', countrySelect.selectedIndex); // 1
+    console.log('Selected text:', countrySelect.options[countrySelect.selectedIndex].text); // "United States"
+    
+    // Get selected options (multiple select)
+    function getSelected() {
+      // For single select
+      console.log('Country selected:', countrySelect.value);
+      
+      // For multiple select
+      const selectedValues = [];
+      const selectedOptions = Array.from(multiSelect.selectedOptions);
+      
+      selectedOptions.forEach(option => {
+        selectedValues.push({
+          value: option.value,
+          text: option.text
+        });
+      });
+      
+      console.log('Multi-selected:', selectedValues);
+      
+      // Alternative: Using selectedOptions property
+      console.log('Selected options:', multiSelect.selectedOptions);
+    }
+    
+    // Add new option
+    function addOption() {
+      const newOption = document.createElement('option');
+      newOption.value = 'fr';
+      newOption.textContent = 'France';
+      
+      // Add to select
+      countrySelect.add(newOption);
+      
+      // Add at specific position (index 2)
+      const newOption2 = new Option('Germany', 'de');
+      countrySelect.add(newOption2, 2);
+      
+      console.log('Options count:', countrySelect.options.length);
+    }
+    
+    // Remove option
+    function removeOption() {
+      if (countrySelect.options.length > 0) {
+        // Remove by index
+        countrySelect.remove(2);
+        
+        // Remove last option
+        // countrySelect.remove(countrySelect.options.length - 1);
+      }
+    }
+    
+    // Change select properties
+    countrySelect.size = 3; // Show 3 options at once (makes it like multi-select)
+    // countrySelect.multiple = true; // Allow multiple selection
+    
+    // Populate select dynamically
+    function populateSelect() {
+      const cities = [
+        { value: 'nyc', name: 'New York' },
+        { value: 'lax', name: 'Los Angeles' },
+        { value: 'chi', name: 'Chicago' },
+        { value: 'hou', name: 'Houston' }
+      ];
+      
+      const citySelect = document.createElement('select');
+      citySelect.id = 'citySelect';
+      
+      cities.forEach(city => {
+        const option = new Option(city.name, city.value);
+        citySelect.add(option);
+      });
+      
+      document.body.appendChild(citySelect);
+    }
+    
+    populateSelect();
+    
+    // Event listeners
+    countrySelect.addEventListener('change', function() {
+      console.log('Country changed to:', this.value);
+      console.log('Selected option:', this.options[this.selectedIndex].text);
+    });
+    
+    multiSelect.addEventListener('change', function() {
+      const selected = Array.from(this.selectedOptions).map(opt => opt.value);
+      console.log('Multi-select changed:', selected);
+    });
+  </script>
+</body>
+</html>

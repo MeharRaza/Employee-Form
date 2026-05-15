@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ 
+       
+        <div class="inputform">
+             <form action="" onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+           <br>
+            <div class="name">
+                <label>Full Name</label>
+                <br>
+              
+                <input type="text" id="fullname">
+            </div>
+            <br>
+            <div class="name">
+                <label>Emp Code</label>
+                <br>
+                <input type="text" id="empcode">
+                </div>
+            <br>
+           
+         <div class="name">
+                <label>Salary</label>
+             <br>   
+                <input type="number" id="salary">
+       </div>
+            <br>
+       
+          <div class="name">
+                <label>City</label><br> 
+                <input type="text" id="city">
+            <br>
+            </div>
+           <br>
+            <div class="submitbutton">
+                <input id="form-submition-button" type="submit" value="submit">
+      </div>
+          </form>
+        
+    </div>
+    
+    <div class="datatable">
+<table class="list" id="employeelist">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Emp Code</th>
+            <th>Salary</th>
+            <th>City</th>
+            <th>
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+      </div>
+        <script src="script.js"></script>
+</body>
+
+</html>

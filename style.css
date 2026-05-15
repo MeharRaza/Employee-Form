@@ -1,0 +1,74 @@
+body{
+    display: flex;
+    justify-content: flex-start;
+}
+.inputform{
+    /* border: 1px solid black; */
+   background-color: blanchedalmond;
+   margin-top: 20px;
+    width: 40%;
+    height: 100%;
+}
+.datatable{
+    /* border: 1px solid black; */
+    margin-top: 20px;
+    margin-left: 5px;
+    width: 40%;
+
+}
+input{
+    width: 80%;
+    height: 15px;
+    padding: 5px 0px;
+    margin-top: 6px;
+}
+/* #form-submition-button{
+    width: 30%;
+    position: absolute;
+    top: 10px;
+    left: 70px;
+} */
+table{
+    /* border: 1px solid black; */
+    margin-top: 1px;
+    background-color: rgb(225, 254, 215);
+    width: 100%;
+    /* width: 50%; */
+}
+thead{
+    /* border: 1px solid black; */
+
+    background-color: rgb(206, 248, 186);
+ 
+}
+tr{
+    /* border: 1px solid black; */
+    margin: 10px;
+      
+}
+th{
+    /* border: 1px solid black; */
+    margin: 10px;
+       padding: 10px;
+}
+/* .name{
+    border: 1px solid black; */
+    /* height: 10px;
+} */
+#form-submition-button{
+height: 29px;
+width: 80px;
+margin-left: 325px;
+background-color: blanchedalmond;
+border: 1px solid black;
+
+
+}
+.submitbutton{
+    /* border: 1px solid black; */
+    height: 41px;
+}
+tbody{
+    /* border: 1px solid black; */
+    padding: 19px;
+}
